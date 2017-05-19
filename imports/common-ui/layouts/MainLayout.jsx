@@ -7,11 +7,7 @@ const MainLayout = ({ content }) => {
   // return <Provider store={store}>
   //   {content()}
   // </Provider>
-  return (
-    <div>
-      {content()}
-    </div>
-  );
+  return content();
 };
 
 MainLayout.propTypes = {

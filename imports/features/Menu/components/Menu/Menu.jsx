@@ -3,10 +3,15 @@ import React, {
 }
 from 'react';
 import PropTypes from 'prop-types';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import MenuCard from '../MenuCard'
 
 export default class Menu extends Component {
+  selectChapter(id) {
+    FlowRouter.go("/chapters/"+id);
+  }
+  
   render() {
     
     return (
@@ -21,7 +26,7 @@ export default class Menu extends Component {
       <div className="ui three cards duany-unitcards">
         {
           this.props.chapters.map((chapter, index) => (
-            <MenuCard name={chapter.info.name} num={index + 1} thumbnailUrl={chapter.info.thumbnail} key={chapter.id} />
+            <MenuCard onClick={this.selectChapter.bind(null, chapter.id)} name={chapter.info.name} num={index + 1} thumbnailUrl={chapter.info.thumbnail} key={chapter.id} />
           ))
         }
       </div>
