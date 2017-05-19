@@ -8,7 +8,7 @@
     "build": {
         "@builder": "auto",
         "@path": "/.c9/builders",
-        "@saveall": "true"
+        "@saveall": true
     },
     "find.nak": {
         "@searchLimit": 100
@@ -69,9 +69,21 @@
     },
     "run": {
         "@path": "/.c9/runners",
+        "@runner": "Meteor",
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "Meteor": {
+                    "command": "",
+                    "debug": true,
+                    "env": {
+                        "port": "$PORT"
+                    },
+                    "name": "Meteor",
+                    "runner": "Meteor",
+                    "toolbar": true
+                }
+            }
         }
     }
 }

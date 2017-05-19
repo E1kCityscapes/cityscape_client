@@ -30,3 +30,4 @@ shell-server@0.2.3
 semantic:ui
 juliancwirko:postcss
 less
+tap:i18n-db
