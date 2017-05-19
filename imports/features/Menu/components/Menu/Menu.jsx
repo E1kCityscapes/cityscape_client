@@ -4,7 +4,7 @@ import React, {
 from 'react';
 import PropTypes from 'prop-types';
 
-// import MenuCard from '../MenuCard'
+import MenuCard from '../MenuCard'
 
 export default class Menu extends Component {
   render() {
@@ -18,7 +18,11 @@ export default class Menu extends Component {
       </div>
 
       <div className="ui three cards duany-unitcards">
-        
+        {
+          this.props.chapters.map((chapter, index) => (
+            <MenuCard chapter={chapter} num={index + 1} />
+          ))
+        }
       </div>
     </div>
     )
@@ -27,5 +31,5 @@ export default class Menu extends Component {
 
 Menu.propTypes = {
   loading: React.PropTypes.bool,
-  todos: React.PropTypes.array
+  chapters: React.PropTypes.array
 }
