@@ -9,13 +9,13 @@ export default class MenuCard extends Component {
     
     render() {
         return (
-            <div className="card" style={{backgroundImage: 'url('+this.props.chapter.info.thumbnail+')'}}>
+            <div className="card" style={{backgroundImage: 'url(/img/chapter_thumbs/'+this.props.thumbnailUrl+')'}}>
               <div className="image">
                 <img/>
               </div>
               <div className="content">
                 <div className="header">
-                  {this.props.chapter.info.num}. <br/> {this.props.chapter.info.name}
+                  {this.props.num}. <br/> {this.props.name}
                 </div>
               </div>
             </div>
@@ -24,5 +24,7 @@ export default class MenuCard extends Component {
 }
 
 MenuCard.propTypes = {
-    chapter: PropTypes.array
+    thumbnailUrl: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    num: PropTypes.number.isRequired
 }

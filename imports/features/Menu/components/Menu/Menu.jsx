@@ -8,6 +8,7 @@ import MenuCard from '../MenuCard'
 
 export default class Menu extends Component {
   render() {
+    
     return (
       <div className="duany-coverblock">
       <div className="ui two column grid">
@@ -20,7 +21,7 @@ export default class Menu extends Component {
       <div className="ui three cards duany-unitcards">
         {
           this.props.chapters.map((chapter, index) => (
-            <MenuCard chapter={chapter} num={index + 1} />
+            <MenuCard name={chapter.info.name} num={index + 1} thumbnailUrl={chapter.info.thumbnail} key={chapter.id} />
           ))
         }
       </div>
