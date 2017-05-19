@@ -6,8 +6,16 @@ export const Chapters = new Mongo.Collection('chapters');
 
 if (Meteor.isServer) {
   // This code only runs on the server
-  Meteor.publish('chapters', function chaptersPublication() {
-    return Chapters.find();
+  Meteor.publish('chapters', function chaptersPublication(params) {
+    const {chapterId} = params;
+    if (!!chapterId) {
+      return Chapters.find({
+        id: chapterId
+      });
+    } else {
+      return Chapters.find();
+    }
+    
   });
 }
 

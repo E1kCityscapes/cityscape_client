@@ -13,7 +13,7 @@ import Menu from './Menu';
 
 export default createContainer(
     () => {
-        const chaptersHandle = Meteor.subscribe('chapters');
+        const chaptersHandle = Meteor.subscribe('chapters', {});
         const loading = !chaptersHandle.ready();
         return {
             loading, 

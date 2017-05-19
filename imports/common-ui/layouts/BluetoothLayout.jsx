@@ -132,6 +132,7 @@ export default class BluetoothLayout extends Component {
                 this.handleTransitUpdate(type, id, state);
                 break;
         }
+        this.forceUpdate(); //ew
         // document.dispatchEvent(stateUpdateEvent);
     }
 

@@ -26,7 +26,7 @@ export default class Menu extends Component {
       <div className="ui three cards duany-unitcards">
         {
           this.props.chapters.map((chapter, index) => (
-            <MenuCard onClick={this.selectChapter.bind(null, chapter.id)} name={chapter.info.name} num={index + 1} thumbnailUrl={chapter.info.thumbnail} key={chapter.id} />
+            <MenuCard onClick={this.selectChapter.bind(null, chapter.id)} name={chapter.info.name} num={chapter.info.num} thumbnailUrl={chapter.info.thumbnail} key={chapter.id} />
           ))
         }
       </div>
