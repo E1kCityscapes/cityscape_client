@@ -3,8 +3,13 @@ import React, {
 }
 from 'react';
 import PropTypes from 'prop-types';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 export default class ChapterIntro extends Component {
+    beginChapter(id) {
+      FlowRouter.go(FlowRouter.current().path + "/" + this.props.chapter.info.skills[0].id);
+    }
+  
     render() {
         if (this.props.loading) {
             //TODO
@@ -37,10 +42,15 @@ export default class ChapterIntro extends Component {
                     <div className="ui list">
                       {
                         this.props.chapter.info.skills.map((skill, index) => (
-                          <div className="item duany-description">{skill.name}</div>
+                          <div className="item duany-description" key={skill.id}>{skill.name}</div>
                         ))
                       }
                     </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="duany-sectionblock sixteen wide column">
+                  <button onClick={this.beginChapter.bind(this)} id="next" className="ui grey button">Next</button>
                   </div>
                 </div>
               </div>
