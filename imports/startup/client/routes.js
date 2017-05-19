@@ -25,3 +25,19 @@ FlowRouter.route('/chapters/:chapterId', {
     mount(BluetoothLayout, { content: () => <ChapterIntroContainer chapterId={params.chapterId}/> });
   },
 });
+
+FlowRouter.route('/chapters/:chapterId/:skillId', {
+  name: 'skill-root',
+  action(params, queryParams) {
+    console.log(params, queryParams);
+    mount(BluetoothLayout, { content: () => <SkillChallengeRedirector/> });
+  },
+});
+
+FlowRouter.route('/chapters/:chapterId/:skillId:/:challengeIdx', {
+  name: 'challenge',
+  action(params, queryParams) {
+    console.log(params, queryParams);
+    mount(BluetoothLayout, { content: () => <Challenge/> });
+  },
+});
