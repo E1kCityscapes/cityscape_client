@@ -4,7 +4,7 @@ import React, {
 from 'react';
 import PropTypes from 'prop-types';
 
-// import MenuCard from '../components/MenuCard'
+// import MenuCard from '../MenuCard'
 
 export default class Menu extends Component {
   render() {

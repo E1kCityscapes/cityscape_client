@@ -7,9 +7,9 @@ import {
 }
 from 'meteor/react-meteor-data';
 
-import { Chapters } from '../api/chapters.js';
+import { Chapters } from '/imports/api/chapters.js';
 
-import Menu from '../pages/Menu';
+import Menu from './Menu';
 
 export default createContainer(
     () => {
